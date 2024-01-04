@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Application Development</title>
+    <!-- Meta tags-->
+    <meta charset="UTF-8">
+    <meta name="keyword" content="IJSE, GDSE, Portfolio, Developer">
+    <meta name="description" content="This is for testing My Portfolio">
+    <meta content="author" name="Buddini Pathinayaka">
+    <meta content="owner" name="Buddini Pathinayaka">
+    <meta content="width=device-width initial-scale=1" name="viewport">
+    <meta name="viewport" content="width=device-width initial-scale=1">
+    <link rel="stylesheet" href="assests/fonts-awesome/css/all.min.css">
+    <link rel="stylesheet" href="assests/css/normalize.css">
+    <link rel="stylesheet" href="assests/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <!--Favicon-->
+    <link rel="icon" href="assests/img/application.png">
+
+    <style>
+
+
+        body{
+            overflow-x: hidden;
+            overflow-y: scroll;
+
+        }
+
+        body::-webkit-scrollbar{
+            display: none;
+        }
+
+        .container h1{
+            font-family: Ubuntu, sans-serif;
+            font-size: 50px;
+            text-align: center;
+            margin-top: 60px;
+            margin-bottom: 7px;
+            padding-bottom: 18px;
+            color: #0c1154;
+        }
+
+        .container h1::after{
+            content: "";
+            position: absolute;
+            display: block;
+            width: 190px;
+            height: 6px;
+            background: #0c1154;
+            /* bottom: 10px; */
+            top: 142px;
+            left: calc(50% - 273px);
+            border-radius: 3px;
+        }
+
+        .container h4{
+            font-family: Ubuntu, sans-serif;
+            font-size: 30px;
+            text-align: center;
+            margin-top: 27px;
+            margin-bottom: 18px;
+            padding-bottom: 26px;
+            color: #FFA500;
+        }
+
+        :root{
+            --clr: #ECF0F3;
+        }
+
+        .navigation{
+            /*display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin-top: -289px;*/
+            width: 473px;
+            height: 70px;
+            background: #0c1154;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            font-family: 'Abril Fatface', cursive;
+            top: 25px;
+            margin-left: 78px;
+        }
+
+        .navigation ul{
+            display: flex;
+            width: 400px;
+            margin-left: -20px;
+            margin-right: 20px;
+        }
+
+        .navigation ul li{
+            position: relative;
+            list-style: none;
+            width: 70px;
+            height: 70px;
+            z-index: 1;
+        }
+
+        .navigation ul li a {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .navigation ul li.active a .icon{
+
+        }
+
+        .navigation ul li a .icon{
+            position: relative;
+            display: block;
+            line-height: 75px;
+            font-size: 1.5em;
+            text-align: center;
+            transition: 0.5s;
+            color: #ECF0F3;
+            --clr: #ECF0F3;
+
+        }
+
+        /*.navigation ul li a .icon::after{
+            color: black;
+        }*/
+
+        .navigation ul li.active a .icon{
+            transform: translateY(-32px);
+            color: black;
+        }
+
+        .navigation ul li a .text{
+            position: absolute;
+            color: var(--clr);
+            font-weight: 400;
+            font-size: 0.75em;
+            letter-spacing: 0.05em;
+            transition: 0.5s;
+            opacity: 0;
+            transform: translateY(20px);
+            top: 38px;
+
+        }
+
+        .navigation ul li.active a .text{
+            opacity: 1;
+            transform: translateY(10px);
+        }
+
+        #portfolio {
+            background-color: #ECF0F3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin-top: -182px;
+            margin-bottom: -244px;
+
+        }
+
+        .indicator{
+            position: absolute;
+            top: -50%;
+            width: 70px;
+            height: 70px;
+            background: #FFA500;
+            border-radius: 50%;
+            border: 6px solid var(--clr);
+            transition: 0.5s;
+        }
+
+        .indicator::before{
+            content: "";
+            position: absolute;
+            top: 42%;
+            left: -22px;
+            width: 20px;
+            height: 20px;
+            background: transparent;
+            border-top-right-radius: 20px;
+            box-shadow: 1px -10px 0 0 var(--clr);
+        }
+
+        .indicator::after{
+            content: "";
+            position: absolute;
+            top: 42%;
+            right: -22px;
+            width: 20px;
+            height: 20px;
+            background: transparent;
+            border-top-left-radius: 20px;
+            box-shadow: -1px -10px 0 0 var(--clr);
+        }
+
+        .navigation ul li:nth-child(1).active ~ .indicator {
+            transform: translateX(calc(70px * 0));
+        }
+
+        .navigation ul li:nth-child(2).active ~ .indicator {
+            transform: translateX(calc(70px * 1));
+        }
+
+        .navigation ul li:nth-child(3).active ~ .indicator {
+            transform: translateX(calc(70px * 2));
+        }
+
+        .navigation ul li:nth-child(4).active ~ .indicator {
+            transform: translateX(calc(70px * 3));
+        }
+        .navigation ul li:nth-child(5).active ~ .indicator {
+            transform: translateX(calc(70px * 4));
+        }
+
+        .portfolio1 {
+            font-family: 'Ubuntu', sans-serif;
+            background-color: #ECF0F3;
+        }
+
+        .portfolio1 .row{
+            --bs-gutter-x: 1.5rem;
+            --bs-gutter-y: 0;
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: calc(-1 * var(--bs-gutter-y));
+            margin-right: calc(-.5 * var(--bs-gutter-x));
+            margin-left: calc(-.5 * var(--bs-gutter-x));
+        }
+
+        .portfolio1 .portfolio-item {
+            margin-bottom: 30px;
+            width: 30px;
+            height: auto;
+        }
+
+        .portfolio1 .portfolio-wrap {
+            transition: 0.3s;
+            position: relative;
+            overflow: hidden;
+            left: 242px;
+            width: 258px;
+            bottom: 82px;
+            height: 206px;
+            z-index: 1;
+            box-shadow: 1px 1px 7px -3px rgb(0 0 0 / 70%);
+            border-radius: 17% 17% 17% 17%;
+        }
+
+        .portfolio1 .portfolio-wrap::before {
+            content: "";
+            background: rgba(255, 255, 255, 0.7);
+            position: absolute;
+            left: 30px;
+            right: 30px;
+            top: 30px;
+            bottom: 30px;
+            transition: all ease-in-out 0.3s;
+            z-index: 2;
+            opacity: 0;
+        }
+
+        .product{
+            width: 100%;
+            /*height: 100px;*/
+            padding: 0 10px;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding-left: 50px;
+            padding-right: 50px;
+            background-color: #ECF0F3;
+        }
+
+        .ui-card{
+            display: none;
+        }
+
+        .product img{
+            width: 300px;
+            height: 300px;
+            padding: 25px;
+            /*object-fit: cover;*/
+            /*object-position: center;*/
+        }
+
+        *,*:after,*:before{
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -ms-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        .card{
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            margin:0;
+            background: #ECF0F3;
+            display: flex;
+            align-items: center;
+            /*justify-content: space-around;*/
+            min-height: 100vh;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding-left: 30px;
+            padding-right: 30px;
+            box-sizing: border-box;
+            margin-top: 115px;
+        }
+        .card img{
+            max-width: 100%;
+        }
+        .card .ui-card{
+            width: 350px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease-out;
+            background: radial-gradient(#111 50%, #000 100%);
+            display: flex;
+            /* padding-bottom: 103px; */
+            margin-bottom: 30px;
+            border-radius: 10%;
+            /*margin-left: 14px;
+            margin-right: 14px;*/
+        }
+
+        .card .ui-card img{
+            transform: scale(1.3);
+            transition: all 0.3s ease-out;
+        }
+        .card .ui-card:hover img{
+            transform: scale(1.1) translateY(-20px);
+            opacity: 0.3
+        }
+        .card .ui-card .description{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            padding: 15px;
+            width: 100%;
+            text-align: center;
+            color: #fff;
+            font-size: 18px;
+        }
+        .card .ui-card .description h3{
+            font-weight: 700;
+            font-size: 32px;
+            margin: 0 0 20px;
+            transform: translateY(30px);
+            opacity: 0;
+            transition: all 0.3s ease-out;
+
+        }
+        .card .ui-card .description p{
+            transform: translateY(30px);
+            opacity: 0;
+            transition: all 0.3s ease-out 0.2s;
+        }
+        .card .ui-card .description a{
+            color: #fff;
+            background: #FFA500;
+            display: inline-block;
+            padding: 10px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            transform: translateY(30px);
+            opacity: 0;
+            transition: all 0.3s ease-out 0.4s;
+        }
+        .card .ui-card .description a:hover{
+            background:#0c1154;
+        }
+        .card .ui-card:hover .description h3{
+            opacity: 1;
+            transform: translateY(0px);
+        }
+        .card .ui-card:hover .description p{
+            opacity: 1;
+            transform: translateY(0px);
+        }
+        .card .ui-card:hover .description a{
+            opacity: 1;
+            transform: translateY(0px);
+        }
+
+
+        /*---------------Responsive Part--------------------------*/
+
+        /*--------------------------Page Responsive -1440px---------------------------------*/
+        @media (max-width: 1440px){
+            .container h1::after {
+                display: none;
+            }
+
+            .card .ui-card {
+                margin-left: 50px;
+                margin-right: 50px;
+                margin-top: 32px;
+            }
+        }
+
+
+        /*--------------------------Page Responsive -1024px---------------------------------*/
+        @media (max-width: 1024px){
+
+        }
+
+        /*--------------------------Page Responsive -768px---------------------------------*/
+        @media (max-width: 768px){
+            .card .ui-card {
+                margin-left: -6px;
+                margin-right: -25px;
+            }
+        }
+
+        /*--------------------------Page Responsive - 425px---------------------------------*/
+        @media (max-width: 426px){
+            .card .ui-card {
+                margin-left: 9px;
+                margin-right: -25px;
+                margin-top: 24px;
+            }
+
+            .navigation {
+                width: 388px;
+                margin-left: 20px;
+                top: 8px;
+            }
+        }
+
+        /*--------------------------Page Responsive - 376px---------------------------------*/
+        @media (max-width: 376px){
+
+            body {
+                width: 104vw;
+            }
+
+            .card .ui-card {
+                margin-left: -10px;
+                margin-right: -25px;
+                margin-top: 11px;
+            }
+
+            .navigation {
+                width: 354px;
+                margin-left: 20px;
+                top: 8px;
+            }
+        }
+
+        /*--------------------------Page Responsive - 320px---------------------------------*/
+        @media (max-width: 320px){
+            body {
+                width: 110vw;
+            }
+
+            .card .ui-card {
+                margin-left: -24px;
+            }
+
+            .navigation {
+                width: 319px;
+            }
+        }
+
+
+    </style>
+
+</head>
+<body>
+
+<main>
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <div id="container">
+                <h1>Application Development</h1>
+                <h4>Assignments</h4>
+            </div>
+
+            <!--Navigation-->
+            <div class="navigation">
+                <ul id="filters">
+                    <li data-filter="*" class="list active">
+                        <a href="#">
+                            <span class="icon" data-filter="*"><i class="fa-solid fa-house"></i></span>
+                            <span class="text">All</span>
+                        </a>
+                    </li>
+                    <li class="list">
+                        <a href="#">
+                            <span class="icon" data-filter=".filter-standalone"><i class="fa-solid fa-house"></i></span>
+                            <span class="text">Standalone</span>
+                        </a>
+                    </li>
+                    <li class="list">
+                        <a href="#">
+                            <span class="icon" data-filter=".filter-java"><i class="fa-solid fa-house"></i></span>
+                            <span class="text">Java</span>
+                        </a>
+                    </li>
+                    <li class="list">
+                        <a href="#">
+                            <span class="icon" data-filter=".filter-python"><i class="fa-solid fa-house"></i></span>
+                            <span class="text">Python</span>
+                        </a>
+                    </li>
+                    <li class="list">
+                        <a href="#">
+                            <span class="icon" data-filter=".filter-hibernate"><i class="fa-solid fa-house"></i></span>
+                            <span class="text">Hibernate</span>
+                        </a>
+                    </li>
+                    <div class="indicator"></div>
+                </ul>
+            </div>
+        </div>
+
+
+    </section>
+
+    <section class="card">
+        <div class="ui-card standalone java">
+            <img src="assests/img/cloud.jpg">
+            <div class="description">
+                <h3>Cosmetics Shop Management System</h3>
+                <p> Standalone Software Application Cosmetics Shop Management System Using MVC Architecture</p>
+                <a href="https://github.com/Buddini96/Cosmetic-Shop-Management-System-MVC-">View</a>
+            </div>
+        </div>
+        <div class="ui-card hibernate java">
+            <img src="assests/img/cloud.jpg">
+            <div class="description">
+                <h3>D24 Hostal Management System</h3>
+                <p>D24 Hostal Management System Using Hibernate Technology</p>
+                <a href="https://github.com/Buddini96/HibernateCW-Hostel-Management-System">View</a>
+            </div>
+        </div>
+        <div class="ui-card standalone ">
+            <img src="assests/img/cloud.jpg">
+            <div class="description">
+                <h3>Connect 4 Game</h3>
+                <p>Connect 4 Game - Standalone Application</p>
+                <a href="https://github.com/Buddini96/Connect-Four-Game">View</a>
+            </div>
+        </div>
+
+        <div class="ui-card standalone">
+            <img src="assests/img/cloud.jpg">
+            <div class="description">
+                <h3>Student Management System</h3>
+                <p>Student Management System - Standalone Application</p>
+                <a href="https://github.com/Buddini96/StudentManagementSystem">View</a>
+            </div>
+        </div>
+
+        <div class="ui-card java">
+            <img src="assests/img/cloud.jpg">
+            <div class="description">
+                <h3>Live Chat Application</h3>
+                <p>Live Chat Application - Standalone Application</p>
+                <a href="https://github.com/Buddini96/Live_Chat_Application">View</a>
+            </div>
+        </div>
+
+
+    </section>
+</main>
+<script src="assests/css/js/jquery-3.6.1.min.js"></script>
+<script>
+    const list = document.querySelectorAll('.list');
+    function activeLink(){
+        list.forEach((item) =>
+            item.classList.remove('active'));
+        this.classList.add('active');
+    }
+
+    list.forEach((item) =>
+        item.addEventListener('click' , activeLink));
+
+    filterObjects("all");
+
+    /*function filterObjects(c){
+        var x, i;
+        x = document.getElementsByClassName("ui-card");
+        if(c == "all") c = "";
+        for ( i = 0; i <x.length; i++) {
+            removeClass(x[i], "show");
+            if(x[i].className.indexOf(c) > -1) addClass(x[i], "show")
+        }
+    }
+
+    function addClass(element,name){
+        var i,arr1, arr2;
+        arr1 = element.className.split("");
+        arr2 = name.split("");
+        for (i = 0; i <arr2.length ; i++) {
+            if(arr1.indexOf(arr2[i]) == -1){
+                element.class += "" + arr2[i];
+            }
+        }
+    }
+
+    function removeClass(element, name){
+        var i, arr1, arr2;
+        arr1 = element.className.split("");
+        arr2 = name.split("");
+        for (i = 0; i <arr2.length ; i++) {
+            while (arr1.indexOf(arr2[i]) > -1){
+                arr1.splice(arr1.indexOf(arr2[i]), 1)
+            }
+        }
+        element.className = arr1.join("");
+    }
+*/
+
+    window.addEventListener('load', () => {
+        let portfolioContainer = select('.card');
+        if (portfolioContainer) {
+            let portfolioIsotope = new Isotope(portfolioContainer, {
+                itemSelector: '.ui-card'
+            });
+
+            let portfolioFilters = select('#filters li', true);
+
+            on('click', '#filters li', function (e) {
+                e.preventDefault();
+                portfolioFilters.forEach(function (el) {
+                    el.classList.remove('active');
+                });
+                this.classList.add('active');
+
+                portfolioIsotope.arrange({
+                    filter: this.getAttribute('data-filter')
+                });
+                portfolioIsotope.on('arrangeComplete', function () {
+                    AOS.refresh()
+                });
+            }, true);
+        }
+
+    });
+
+
+    /**
+     * Easy selector helper function
+     */
+    const select = (el, all = false) => {
+        el = el.trim()
+        if (all) {
+            return [...document.querySelectorAll(el)]
+        } else {
+            return document.querySelector(el)
+        }
+    }
+
+    /**
+     * Easy event listener function
+     */
+    const on = (type, el, listener, all = false) => {
+        let selectEl = select(el, all)
+        if (selectEl) {
+            if (all) {
+                selectEl.forEach(e => e.addEventListener(type, listener))
+            } else {
+                selectEl.addEventListener(type, listener)
+            }
+        }
+    }
+
+</script>
+<!--<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>-->
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>POS System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>POS System</title>
+    <link rel="stylesheet" href="assests/css/bootstrap.css">
+    <link rel="stylesheet" href="assests/fonts-awesome/css/all.min.css">
+    <script src="assests/js/bootstrap.js"></script>
+
+</head>
+
+<style>
+    .banner-image {
+        background-image: url('assests/img/cover.jpg');
+        background-size: cover;
+    }
+
+
+</style>
+<body>
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark p-md-3">
+    <div class="container">
+        <a class="navbar-brand" href="#"><i class="fa-brands fa-xing"></i> POS SYSTEM</a>
+        <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="mx-auto"></div>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="home.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="customer.html">Customer</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="./store.html">Store</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="order.html">Order</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="placeOrder.html">Place Order</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<div
+        class="banner-image w-100 vh-100 d-flex justify-content-center align-items-center">
+    <div class="content text-center">
+        <!--<h1 class="text-white">POS SYSTEM</h1>-->
+    </div>
+
+    <main class="container">
+        <section class="row p-4 m-0 object-fit-contain" id="Items">
+            <h2 class="text-body pt-5 m-lg-2">Manage Items</h2>
+            <section class="col-12 col-sm-12 col-md-12 col-lg-4 " >
+                <h5 class="text-dark text-center m-lg-3 pt-5" ></h5>
+                <form>
+                    <div class="form-floating mb-3 mt-2">
+                        <input type="text" class="form-control" id="Iid" placeholder="Id">
+                        <label for="Iid">Item id</label>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="ItemDesc" placeholder="Name">
+                        <label for="ItemDesc">Description</label>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control" id="UPrice" placeholder="Address">
+                        <label for="UPrice">Unit Price</label>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control" id="Qty" placeholder="Contact">
+                        <label for="Qty">Quantity</label>
+                    </div>
+                </form>
+
+                <div class="col-8 ms-5">
+                    <button type="button" class="btn btn-success me-1 mt-2 mb-3">Save</button>
+                    <button type="button" class="btn btn-warning me-1 mt-2 mb-3 ms-4">Update</button>
+                </div>
+
+            </section>
+
+            <section class="col-12 col-sm-12 col-md-12 col-lg-7 ">
+                <h5 class="text-dark text-center m-lg-3 pb-3" >Item Details</h5>
+                <table class="table table-light table-striped">
+                    <thead>
+                    <tr>
+                        <th style="background-color: #76a9d0" scope="col">Item Id</th>
+                        <th style="background-color: #76a9d0" scope="col">Description</th>
+                        <th style="background-color: #76a9d0" scope="col">Unit Price</th>
+                        <th style="background-color: #76a9d0" scope="col">Quantity</th>
+                        <th style="background-color: #76a9d0" scope="col">Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">I001</th>
+                        <td>Dhal</td>
+                        <td>600.00</td>
+                        <td>20</td>
+                        <td>
+                            <button type="button" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i></button>
+                            <button type="button" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">I002</th>
+                        <td>Soap</td>
+                        <td>220.00</td>
+                        <td>50</td>
+                        <td>
+                            <button type="button" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i></button>
+                            <button type="button" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">I003</th>
+                        <td>Shampoo</td>
+                        <td>900.00</td>
+                        <td>10</td>
+                        <td>
+                            <button type="button" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i></button>
+                            <button type="button" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">I004</th>
+                        <td>Biscuts</td>
+                        <td>300.00</td>
+                        <td>40</td>
+                        <td>
+                            <button type="button" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i></button>
+                            <button type="button" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">I005</th>
+                        <td>Milk</td>
+                        <td>700.00</td>
+                        <td>10</td>
+                        <td>
+                            <button type="button" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i></button>
+                            <button type="button" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </section>
+        </section>
+    </main>
+</div>
+</body>
+</html>
