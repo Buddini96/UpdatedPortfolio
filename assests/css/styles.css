@@ -235,7 +235,7 @@ main>section:nth-child(4)>section:nth-child(3)>nav:first-child {
 }
 
 .animated-text span::before{
-    content: "Developer";
+    content: "Front-end Developer";
     color: #FFA500;
     animation: words 20s infinite;
 }
@@ -259,13 +259,13 @@ main>section:nth-child(4)>section:nth-child(3)>nav:first-child {
 
 @keyframes words {
     0%,20%{
-        content: "Developer";
+        content: "Front-end Developer";
     }
     21%,40%{
         content: "Designer";
     }
     41%,60%{
-        content: "Developer";
+        content: "Front-end Developer";
     }
     61%,80%{
         content: "Designer";
@@ -1367,7 +1367,7 @@ main #projects section:nth-child(2) {
 
 .wave{
     position: absolute;
-    bottom: -3px;
+    bottom: -4px;
     left: 0;
 }
 
@@ -1380,14 +1380,14 @@ main #projects section:nth-child(2) {
 .wave4{
     position: absolute;
     right: 0px;
-    left: 474px;
+    left: 478px;
     top: 0px;
 }
 
 .wave1{
     position: absolute;
-    left: 517px;
-    bottom: -3px;
+    left: 522px;
+    bottom: -4px;
     right: 0;
 }
 
