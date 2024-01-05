@@ -379,14 +379,13 @@ main #profile{
 }
 
 .profile {
-    width: 550px;
-    height: 532px;
+    width: 520px;
+    height: 511px;
     background-size: cover;
     position: absolute;
     float: right;
-    top: 7%;
-    right: 87px;
-
+    top: 9%;
+    right: 116px;
 }
 
 /*----------------------about scetion --------------------------------*/
