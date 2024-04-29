@@ -1399,6 +1399,12 @@ main #projects section:nth-child(2) {
     background: #e7b609;
 }
 
+.contact_form input:focus,
+.contact_form textarea:focus {
+    outline: none;
+}
+
+
 .heading_text{
    font-size: 30px;
     color: #0c1154;
@@ -1416,7 +1422,7 @@ main #projects section:nth-child(2) {
     width: 162px;
     height: 6px;
     background: #0c1154;
-    bottom: 710px;
+    bottom: 745px;
     left: calc(50% - 190px);
     border-radius: 3px;
 }

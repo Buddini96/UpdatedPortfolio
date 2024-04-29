@@ -21,8 +21,6 @@
 
         <link rel="icon" href="assests/images/favicon1.png">
 
-
-
 </head>
 <!--Body Content-->
 <body>
@@ -97,7 +95,7 @@
                 <h2>About Me</h2>
                 <p class="para">
                     I am Buddini. A student of Graduate Diploma in Software Engineering
-                    and currently completing my Second semester.<br> I like to improve my
+                    and currently completing my third semester.<br> I like to improve my
                     skills working with projects.
                 </p>
                 <p class="para1">
@@ -143,10 +141,10 @@
         <br>
 
 
-        <button class="download"  onclick="window.open('assests/cv/resume-example.pdf')">
+        <button class="download"  onclick="window.open('assests/cv/Buddini_Pathinayaka_Front_end.pdf')">
             <div><i class="fa-solid fa-download"></i></div>
             <!--<a href="assests/cv/CV-Buddini.pdf" download="download name"><button>Download My CV</button></a>-->
-            <p class="text" href="assests/cv/resume-example.pdf" download="download name">Download CV</p>
+            <p class="text" href="assests/cv/Buddini_Pathinayaka_Front_end.pdf" download="download name">Download CV</p>
             <!--<pccccc class="text"><a href="assests/cv/CV-Buddini.pdf" download="download name">Contact</a></p>-->
 
         </button>
@@ -256,9 +254,9 @@
                         <div class="slide">
                             <img src="https://skillicons.dev/icons?i=php" alt="">
                         </div>
-                        <div class="slide">
-                            <img src="https://skillicons.dev/icons?i=py" alt="">
-                        </div>
+<!--                        <div class="slide">-->
+<!--                            <img src="https://skillicons.dev/icons?i=py" alt="">-->
+<!--                        </div>-->
                         <div class="slide">
                             <img src="assests/images/intelij.png" alt="">
                         </div>
@@ -306,6 +304,12 @@
                         </div>
                         <div class="slide">
                             <img src="https://skillicons.dev/icons?i=next" alt="">
+                        </div>
+                        <div class="slide">
+                            <img src="https://skillicons.dev/icons?i=flutter" alt="">
+                        </div>
+                        <div class="slide">
+                            <img src="https://skillicons.dev/icons?i=mui" alt="">
                         </div>
 
                     </div>
@@ -448,16 +452,23 @@
 
             </aside>
 
-            <form class="contact_form" id="contact_form" action="" method="post" target="_blank">
-                <h4>Get in Touch</h4>
-                <input type="text" id="name" placeholder="Name" autocomplete="off" required>
+<!--            <form class="contact_form" id="contact_form" action="https://api.web3forms.com/submit" method="POST" target="_blank">-->
+            <form class="contact_form" id="contact_form" action="https://api.web3forms.com/submit" method="POST">
+            <h4>Get in Touch</h4>
+                <input type="hidden" name="access_key" value="b3825f56-578b-452c-9c3d-68b7132ccb5a">
+<!--                <input type="text" name="name" id="name" placeholder="Name" autocomplete="off" required>-->
+                <input style="padding: 16px" type="text" name="name" required>
                 <br>
-                <input type="email" id="email" placeholder="Email" autocomplete="off" required>
+                <input style="padding: 16px" type="email" name="email" required>
+<!--                <input type="email" name="email" id="email" placeholder="Email" autocomplete="off" required>-->
                 <br>
-                <textarea name="message" id="msg" placeholder="Message" autocomplete="off" spellcheck="false" required></textarea>
+                <textarea style="padding: 16px" name="message" required></textarea>
+<!--                <textarea name="message" id="msg" placeholder="Message" autocomplete="off" spellcheck="false" required></textarea>-->
                 <br>
-                <button id="btnSubmit" type="submit">
-                    <!--<a href="buddinikl1996@gmail.com">-->Leave a Comment</a>
+
+<!--                <button id="btnSubmit" type="submit">-->
+                <button type="submit" >Leave a Comment</button>
+<!--                    <a href="buddinikl1996@gmail.com">Leave a Comment</a>-->
                 </button>
 
 
@@ -510,6 +521,48 @@
 <script src="assests/css/js/jquery-3.6.1.min.js"></script>
 <script src="assests/css/js/smtp.js"></script>
 <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+<script>
+    window.addEventListener('pageshow', function(event) {
+        var form = document.getElementById("contact_form");
+        // Clear the form fields if the page is shown from the browser cache
+        if (event.persisted || (window.performance && window.performance.navigation.type === 2)) {
+            form.reset();
+        }
+    });
+
+    document.addEventListener("DOMContentLoaded", function() {
+        document.getElementById("contact_form").addEventListener("submit", function(event) {
+            // Prevent default form submission
+            event.preventDefault();
+
+            // Submit the form data
+            var form = event.target;
+            var formData = new FormData(form);
+
+            fetch(form.action, {
+                method: form.method,
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        form.reset();
+                        alert("Thank you! The form has been submitted successfully. We will reply to you soon!");
+                    } else {
+                        alert("Form submission failed. Please try again.");
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert("An error occurred while submitting the form. Please try again.");
+                });
+        });
+    });
+</script>
 
 
 <script>
