@@ -379,12 +379,12 @@ main #profile{
 }
 
 .profile {
-    width: 520px;
-    height: 511px;
+    width: 466px;
+    height: 497px;
     background-size: cover;
     position: absolute;
     float: right;
-    top: 9%;
+    top: 11%;
     right: 116px;
 }
 
@@ -455,7 +455,7 @@ main #profile{
 }
 
 .profile2 {
-    width: 520px;
+    width: 510px;
     height: 500px;
     background-size: cover;
     position: relative;
@@ -869,7 +869,7 @@ main #gallery section:nth-child(2)>section:first-child>div:nth-child(2) {
 main #gallery section:nth-child(2)>section:first-child>div:nth-child(3) {
     grid-column: 4/5;
     grid-row: 1/4;
-    background: url("../images/c2.jpg") center;
+    background: url("../images/g3.jpg") center;
     background-size: cover;
     object-position: center center;
     height: auto;
@@ -893,11 +893,13 @@ main #gallery section:nth-child(2)>section:first-child>div:nth-child(4) {
  */
 
 main #gallery section:nth-child(2)>section:first-child>div:nth-child(5) {
-    background: url("../images/c7.jpg") center;
+    background: url("../images/fam.jpg") center;
     background-size: cover;
     object-position: center center;
     height: auto;
     vertical-align: middle;
+    background-repeat: no-repeat;
+    background-position-y: -6vh;
 }
 
 /**
