@@ -470,6 +470,7 @@ main #profile{
     color: rgba(14, 14, 14, 0.71) !important;
     margin-top: 0;
     font-weight: bold;
+    padding-right: 2rem;
 }
 
 .para1{
@@ -479,6 +480,7 @@ main #profile{
     color: rgba(14, 14, 14, 0.71) !important;
     margin-top: 0;
     font-weight: bold;
+    padding-right: 3rem;
 }
 
 .info {
